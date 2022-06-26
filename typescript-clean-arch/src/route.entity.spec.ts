@@ -50,4 +50,17 @@ describe('Route Entity', () => {
     route.updateTitle('updated_title');
     expect(route.title).toBe('updated_title');
   });
+
+  test('should be possible to update the positions', () => {
+    const routeProps: RouteProps = routeObjectWithoutPoints();
+
+    const route: Route = createRoute(routeProps);
+
+    const startPosition = { lat: 1, lng: 1 };
+    const endPosition = { lat: 2, lng: 2 };
+
+    route.updatePosition(startPosition, endPosition);
+    expect(route.startPosition).toEqual(startPosition);
+    expect(route.endPosition).toEqual(endPosition);
+  });
 });
