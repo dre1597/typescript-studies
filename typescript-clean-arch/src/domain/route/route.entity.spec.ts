@@ -1,25 +1,5 @@
 import { LatLng, Route, RouteProps } from './index';
-
-const routeObjectWithoutPoints = (): RouteProps => {
-  return {
-    title: 'any_title',
-    startPosition: { lat: 0, lng: 0 },
-    endPosition: { lat: 0, lng: 0 },
-  };
-};
-
-const routeObjectWithPoints = (): RouteProps => {
-  return {
-    title: 'any_title',
-    startPosition: { lat: 0, lng: 0 },
-    endPosition: { lat: 0, lng: 0 },
-    points: [{ lat: 0, lng: 0 }],
-  };
-};
-
-const createRoute = (routeProps: RouteProps): Route => {
-  return new Route(routeProps);
-};
+import { createRoute, routeObjectWithoutPoints, routeObjectWithPoints } from './mocks';
 
 describe('Route Entity', () => {
   it('should be possible to create a new route without points', () => {
