@@ -1,14 +1,4 @@
-export type LatLng = {
-  lat: number;
-  lng: number;
-};
-
-export type RouteProps = {
-  title: string;
-  startPosition: LatLng;
-  endPosition: LatLng;
-  points?: LatLng[];
-};
+import { LatLng, RouteProps } from './index';
 
 export class Route {
   public props: Required<RouteProps>;
@@ -17,19 +7,19 @@ export class Route {
     this.props = { ...props, points: props.points || [] };
   }
 
-  get title(): string {
+  public get title(): string {
     return this.props.title;
   }
 
-  get startPosition(): LatLng {
+  public get startPosition(): LatLng {
     return this.props.startPosition;
   }
 
-  get endPosition(): LatLng {
+  public get endPosition(): LatLng {
     return this.props.endPosition;
   }
 
-  get points(): LatLng[] {
+  public get points(): LatLng[] {
     return this.props.points;
   }
 
@@ -49,16 +39,20 @@ export class Route {
     this.props.points = points;
   }
 
-  updatePosition(startPosition: LatLng, endPosition: LatLng): void {
+  public updatePosition(startPosition: LatLng, endPosition: LatLng): void {
     this.startPosition = startPosition;
     this.endPosition = endPosition;
   }
 
-  updateTitle(title: string): void {
+  public updateTitle(title: string): void {
     this.title = title;
   }
 
-  updatePoints(points: LatLng[]): void {
+  public updatePoints(points: LatLng[]): void {
     this.points = points;
+  }
+
+  public toJSON(): Required<RouteProps> {
+    return this.props;
   }
 }

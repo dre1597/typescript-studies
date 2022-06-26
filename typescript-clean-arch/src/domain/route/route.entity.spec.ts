@@ -1,4 +1,4 @@
-import { LatLng, Route, RouteProps } from './route.entity';
+import { LatLng, Route, RouteProps } from './index';
 
 const routeObjectWithoutPoints = (): RouteProps => {
   return {
