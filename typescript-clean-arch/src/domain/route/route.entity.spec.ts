@@ -22,7 +22,7 @@ const createRoute = (routeProps: RouteProps): Route => {
 };
 
 describe('Route Entity', () => {
-  test('should be possible to create a new route without points', () => {
+  it('should be possible to create a new route without points', () => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
     const routeWithoutPoints: Route = createRoute(routeProps);
 
@@ -32,7 +32,7 @@ describe('Route Entity', () => {
     });
   });
 
-  test('should be possible to create a new route with points', () => {
+  it('should be possible to create a new route with points', () => {
     const routeProps: RouteProps = routeObjectWithPoints();
     const routeWithPoints = createRoute(routeProps);
 
@@ -42,7 +42,7 @@ describe('Route Entity', () => {
     });
   });
 
-  test('should be possible to update the title', () => {
+  it('should be possible to update the title', () => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
 
     const route: Route = createRoute(routeProps);
@@ -51,7 +51,7 @@ describe('Route Entity', () => {
     expect(route.title).toBe('updated_title');
   });
 
-  test('should be possible to update the positions', () => {
+  it('should be possible to update the positions', () => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
 
     const route: Route = createRoute(routeProps);
@@ -64,7 +64,7 @@ describe('Route Entity', () => {
     expect(route.endPosition).toEqual(endPosition);
   });
 
-  test('should be possible to update points', () => {
+  it('should be possible to update points', () => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
 
     const route: Route = createRoute(routeProps);
