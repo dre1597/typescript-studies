@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+
 import { LatLng, RouteProps } from './index';
 
 export class Route {
@@ -55,7 +56,7 @@ export class Route {
     this.points = points;
   }
 
-  public toJSON(): Required<RouteProps> {
-    return this.props;
+  public toJSON() {
+    return { id: this.id, ...this.props };
   }
 }

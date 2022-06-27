@@ -1,7 +1,6 @@
 import { routeObjectWithoutPoints } from '../../domain';
 import { RouteInMemoryRepository } from '../../infra';
-import { CreateRouteUseCase } from './create-route.use-case';
-import { CreateRouteOutPut } from './types';
+import { CreateRouteOutput, CreateRouteUseCase } from './index';
 
 export const createRepository = (): RouteInMemoryRepository => {
   return new RouteInMemoryRepository();
@@ -16,9 +15,9 @@ describe('CreateRouteUseCase', (): void => {
     const repository: RouteInMemoryRepository = createRepository();
     const createUseCase: CreateRouteUseCase = createRouteUseCase(repository);
 
-    const output: CreateRouteOutPut = await createUseCase.execute(routeObjectWithoutPoints());
+    const output: CreateRouteOutput = await createUseCase.execute(routeObjectWithoutPoints());
 
-    expect(output).toStrictEqual({ ...routeObjectWithoutPoints(), points: [] });
     expect(repository.items).toHaveLength(1);
+    expect(output).toStrictEqual({ ...routeObjectWithoutPoints(), points: [], id: repository.items[0].id });
   });
 });

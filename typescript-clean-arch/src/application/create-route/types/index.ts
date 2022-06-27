@@ -1,4 +1,4 @@
-import { LatLng } from '../../../domain/route';
+import { LatLng } from '../../../domain';
 
 export type CreateRouteInput = {
   title: string;
@@ -7,7 +7,8 @@ export type CreateRouteInput = {
   paths?: LatLng[];
 };
 
-export type CreateRouteOutPut = {
+export type CreateRouteOutput = {
+  id: string;
   title: string;
   startPosition: LatLng;
   endPosition: LatLng;
