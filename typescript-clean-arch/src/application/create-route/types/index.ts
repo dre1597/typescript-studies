@@ -4,7 +4,7 @@ export type CreateRouteInput = {
   title: string;
   startPosition: LatLng;
   endPosition: LatLng;
-  paths?: LatLng[];
+  points?: LatLng[];
 };
 
 export type CreateRouteOutput = {
@@ -12,5 +12,5 @@ export type CreateRouteOutput = {
   title: string;
   startPosition: LatLng;
   endPosition: LatLng;
-  paths?: LatLng[];
+  points?: LatLng[];
 };
