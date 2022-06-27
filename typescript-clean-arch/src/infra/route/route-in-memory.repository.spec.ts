@@ -5,17 +5,17 @@ export const createRoute = (routeProps: RouteProps): Route => {
   return new Route(routeProps);
 };
 
-export const createRouteInMemoryRepository = () => {
+export const createRouteInMemoryRepository = (): RouteInMemoryRepository => {
   return new RouteInMemoryRepository();
 };
 
-describe('RouteInMemoryRepository', () => {
-  it('should store a new route', async () => {
-    const repository = createRouteInMemoryRepository();
+describe('RouteInMemoryRepository', (): void => {
+  it('should store a new route', async (): Promise<void> => {
+    const repository: RouteInMemoryRepository = createRouteInMemoryRepository();
 
     const routeProps: RouteProps = routeObjectWithoutPoints();
 
-    const route = createRoute(routeProps);
+    const route: Route = createRoute(routeProps);
 
     await repository.store(route);
 

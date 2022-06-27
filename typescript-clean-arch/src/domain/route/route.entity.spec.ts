@@ -5,8 +5,8 @@ export const createRoute = (routeProps: RouteProps): Route => {
   return new Route(routeProps);
 };
 
-describe('Route Entity', () => {
-  it('should be possible to create a new route without points', () => {
+describe('Route Entity', (): void => {
+  it('should be possible to create a new route without points', (): void => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
     const routeWithoutPoints: Route = createRoute(routeProps);
 
@@ -16,9 +16,9 @@ describe('Route Entity', () => {
     });
   });
 
-  it('should be possible to create a new route with points', () => {
+  it('should be possible to create a new route with points', (): void => {
     const routeProps: RouteProps = routeObjectWithPoints();
-    const routeWithPoints = createRoute(routeProps);
+    const routeWithPoints: Route = createRoute(routeProps);
 
     expect(routeWithPoints.props).toStrictEqual({
       ...routeProps,
@@ -26,18 +26,16 @@ describe('Route Entity', () => {
     });
   });
 
-  it('should be possible to update the title', () => {
+  it('should be possible to update the title', (): void => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
-
     const route: Route = createRoute(routeProps);
 
     route.updateTitle('updated_title');
     expect(route.title).toBe('updated_title');
   });
 
-  it('should be possible to update the positions', () => {
+  it('should be possible to update the positions', (): void => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
-
     const route: Route = createRoute(routeProps);
 
     const startPosition = { lat: 1, lng: 1 };
@@ -48,9 +46,8 @@ describe('Route Entity', () => {
     expect(route.endPosition).toEqual(endPosition);
   });
 
-  it('should be possible to update points', () => {
+  it('should be possible to update points', (): void => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
-
     const route: Route = createRoute(routeProps);
 
     const points: LatLng[] = [
