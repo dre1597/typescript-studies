@@ -10,6 +10,7 @@ describe('Route Entity', (): void => {
     const routeProps: RouteProps = routeObjectWithoutPoints();
     const routeWithoutPoints: Route = createRoute(routeProps);
 
+    expect(routeWithoutPoints.id).toBeDefined();
     expect(routeWithoutPoints.props).toStrictEqual({
       ...routeProps,
       points: [],
@@ -20,6 +21,7 @@ describe('Route Entity', (): void => {
     const routeProps: RouteProps = routeObjectWithPoints();
     const routeWithPoints: Route = createRoute(routeProps);
 
+    expect(routeWithPoints.id).toBeDefined();
     expect(routeWithPoints.props).toStrictEqual({
       ...routeProps,
       points: [{ lat: 0, lng: 0 }],

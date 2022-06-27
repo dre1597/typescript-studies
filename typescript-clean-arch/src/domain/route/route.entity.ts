@@ -1,9 +1,12 @@
+import crypto from 'crypto';
 import { LatLng, RouteProps } from './index';
 
 export class Route {
+  public readonly id: string;
   public props: Required<RouteProps>;
 
-  constructor(props: RouteProps) {
+  constructor(props: RouteProps, id?: string) {
+    this.id = id || crypto.randomUUID();
     this.props = { ...props, points: props.points || [] };
   }
 
