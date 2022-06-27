@@ -1,4 +1,4 @@
-import { Route, RouteProps } from '../../../domain';
+import { RouteProps } from '../../../domain';
 
 export const routeObjectWithoutPoints = (): RouteProps => {
   return {
@@ -15,8 +15,4 @@ export const routeObjectWithPoints = (): RouteProps => {
     endPosition: { lat: 0, lng: 0 },
     points: [{ lat: 0, lng: 0 }],
   };
-};
-
-export const createRoute = (routeProps: RouteProps): Route => {
-  return new Route(routeProps);
 };

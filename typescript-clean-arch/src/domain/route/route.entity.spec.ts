@@ -1,5 +1,9 @@
 import { LatLng, Route, RouteProps } from './index';
-import { createRoute, routeObjectWithoutPoints, routeObjectWithPoints } from './mocks';
+import { routeObjectWithoutPoints, routeObjectWithPoints } from './mocks';
+
+export const createRoute = (routeProps: RouteProps): Route => {
+  return new Route(routeProps);
+};
 
 describe('Route Entity', () => {
   it('should be possible to create a new route without points', () => {

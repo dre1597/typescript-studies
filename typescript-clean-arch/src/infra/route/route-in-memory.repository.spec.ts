@@ -1,5 +1,13 @@
-import { RouteProps, routeObjectWithoutPoints, createRoute } from '../../domain';
-import { createRouteInMemoryRepository } from './mocks';
+import { RouteProps, routeObjectWithoutPoints, Route } from '../../domain';
+import { RouteInMemoryRepository } from './route-in-memory.repository';
+
+export const createRoute = (routeProps: RouteProps): Route => {
+  return new Route(routeProps);
+};
+
+export const createRouteInMemoryRepository = () => {
+  return new RouteInMemoryRepository();
+};
 
 describe('RouteInMemoryRepository', () => {
   it('should store a new route', async () => {
